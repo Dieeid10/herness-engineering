@@ -1,0 +1,3 @@
+- Respondé siempre en español salvo que el usuario pida código o identificadores en inglés.
+- Si el SDD del proyecto no tiene información suficiente para una tarea, indicalo explícitamente en vez de asumir.
+- Priorizá cambios pequeños y verificables sobre reescrituras grandes, salvo que se pida explícitamente.

@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./proyectos"],
+      "description": "Lectura/escritura de archivos dentro de proyectos/"
+    },
+    "git": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-git"],
+      "description": "Operaciones git (log, diff, status) en el repo actual"
+    }
+  }
+}

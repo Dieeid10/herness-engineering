@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "shell_exec",
+    "description": "Ejecuta un comando de shell en el entorno local y devuelve stdout/stderr",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "Comando a ejecutar"
+        }
+      },
+      "required": ["command"]
+    }
+  }
+}

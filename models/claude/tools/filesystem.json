@@ -1,0 +1,8 @@
+{
+  "name": "filesystem",
+  "type": "mcp_server",
+  "description": "Acceso de lectura/escritura al filesystem del proyecto",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-filesystem", "./proyectos"],
+  "enabled": true
+}

@@ -1,0 +1,9 @@
+{
+  "provider": "vllm-local",
+  "base_url": "http://localhost:8000/v1",
+  "model": "kimi-k2-instruct",
+  "api_key_env": null,
+  "temperature": 0.3,
+  "max_tokens": 8000,
+  "notes": "Servido localmente via vLLM. Sin costo de API. Requiere GPU con VRAM suficiente o variante cuantizada (AWQ/GGUF). Verificar requisitos de hardware antes de levantar el server."
+}

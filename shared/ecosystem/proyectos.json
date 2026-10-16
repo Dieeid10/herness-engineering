@@ -1,0 +1,18 @@
+{
+  "proyectos": [
+    {
+      "nombre": "proyecto-a",
+      "path": "proyectos/proyecto-a",
+      "estado": "activo",
+      "modelo_default": "kimi-k2",
+      "repo_git": null
+    },
+    {
+      "nombre": "proyecto-b",
+      "path": "proyectos/proyecto-b",
+      "estado": "activo",
+      "modelo_default": "claude",
+      "repo_git": null
+    }
+  ]
+}
