@@ -1,0 +1,8 @@
+{
+  "provider": "ollama",
+  "base_url": "http://localhost:11434/api",
+  "model": "phi3:mini",
+  "temperature": 0.3,
+  "max_tokens": 4096,
+  "notes": "Modelo local servido por Ollama. Este perfil usa phi3:mini, que debe estar descargado localmente."
+}

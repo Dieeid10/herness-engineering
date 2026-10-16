@@ -13,6 +13,8 @@ Requiere:
     export ANTHROPIC_API_KEY=...   # solo si vas a usar el modelo 'claude'
     # para kimi-k2: tener vLLM corriendo local en localhost:8000
     #   ej: vllm serve moonshotai/Kimi-K2-Instruct --port 8000
+    # para ollama: tener Ollama corriendo local en localhost:11434
+    #   ej: ollama pull qwen2.5-coder:7b
 """
 
 import json
@@ -137,9 +139,32 @@ def call_vllm_local(session: dict, user_prompt: str) -> str:
     return data["choices"][0]["message"]["content"]
 
 
+def call_ollama(session: dict, user_prompt: str) -> str:
+    settings = session["model_settings"]
+    url = f"{settings['base_url']}/chat"
+    payload = {
+        "model": settings["model"],
+        "stream": False,
+        "options": {
+            "temperature": settings.get("temperature", 0.3),
+            "num_predict": settings.get("max_tokens", 4096),
+        },
+        "messages": [
+            {"role": "system", "content": session["system_prompt"]},
+            {"role": "user", "content": user_prompt},
+        ],
+    }
+
+    resp = requests.post(url, json=payload, timeout=300)
+    resp.raise_for_status()
+    data = resp.json()
+    return data["message"]["content"]
+
+
 PROVIDER_DISPATCH = {
     "anthropic": call_anthropic,
     "vllm-local": call_vllm_local,
+    "ollama": call_ollama,
 }
 
 
